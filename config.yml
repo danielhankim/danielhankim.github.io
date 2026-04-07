@@ -51,11 +51,11 @@ params:
     math: true
     profileMode:
           enabled: true
-          title: Minsuk Kim (a.k.a. Daniel Han Kim)
-          subtitle: "I am a Ph.D. candidate in Informatics at Indiana University Bloomington, where I study complex networks and systems. My research sits at the intersection of transportation infrastructure, human mobility, and urban accessibility — I use tools from network science, statistical physics, and machine learning to understand cities as self-organized complex systems. Before coming to Indiana, I earned my B.Sc. and M.Sc. in Physics from Kyung Hee University in Seoul, where I developed a foundation in statistical physics and complex systems."
-          imageUrl: "picture.jpeg"
-          imageWidth: 160
-          imageHeight: 160
+          title: Minsuk Kim
+          subtitle: "<span style='font-size: 1rem; color: var(--secondary); display: block; margin-top: -6px; margin-bottom: 10px;'>Daniel Han Kim</span>I am a Ph.D. candidate in Informatics at Indiana University Bloomington, where I study complex networks and systems. My research sits at the intersection of transportation infrastructure, human mobility, and urban accessibility — I use tools from network science, statistical physics, and machine learning to understand cities as self-organized complex systems. Before coming to Indiana, I earned my B.Sc. and M.Sc. in Physics from Kyung Hee University in Seoul, where I developed a foundation in statistical physics and complex systems."
+          imageUrl: "picture.jpg"
+          imageWidth: 200
+          imageHeight: 200
           buttons:
             - name: Papers
               url: papers/
@@ -90,7 +90,7 @@ params:
         hiddenInList: false
         hiddenInSingle: true
     label:
-      text: "Minsuk Kim (a.k.a. Daniel Han Kim)"
+      text: "Minsuk Kim"
       icon: favicon.ico
       iconHeight: 18
 
