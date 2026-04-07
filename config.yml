@@ -1,5 +1,5 @@
 baseURL: "https://danielhankim.github.io" 
-title: Moritz-Maria von Igelfeld
+title: Minsuk Kim
 theme: PaperMod
 
 enableInlineShortcodes: true
@@ -54,8 +54,8 @@ params:
     math: true
     profileMode:
           enabled: true
-          title: Professor Dr von Igelfeld
-          subtitle: "I am a Professor in the Institute of Romance Philology at the University of Regensburg, Germany. My research focuses on Portuguese irregular verbs. I was a doctoral student of Professor Dr Dieter Vogelsang in Munich, and later a second assistant of Professor Walter Schoeffler-Henschell at the University of Wiesbaden."
+          title: Minsuk Kim (a.k.a. Daniel Han Kim)
+          subtitle: "I am a Ph.D. candidate in Informatics at Indiana University Bloomington, where I study complex networks and systems. My research sits at the intersection of transportation infrastructure, human mobility, and urban accessibility — I use tools from network science, statistical physics, and machine learning to understand how cities move and who they serve. Before coming to Indiana, I earned my B.Sc. and M.Sc. in Physics from Kyung Hee University in Seoul, where I developed a foundation in statistical physics and complex systems."
           imageUrl: "picture.jpeg"
           imageWidth: 160
           imageHeight: 160
