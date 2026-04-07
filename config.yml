@@ -12,21 +12,18 @@ taxonomies:
 
 menu:
     main:
-        - name: Books
-          url: books/
-          weight: 5 
         - name: Papers
           url: papers/
+          weight: 1
+        - name: Research
+          url: research/
           weight: 2
-        - name: Courses
-          url: courses/
-          weight: 3
-        - name: Data
-          url: data/
-          weight: 4 
         - name: Blog
-          url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
-          weight: 6
+          url: blog/
+          weight: 3
+        - name: Tags
+          url: tags/
+          weight: 4
 
 params:
     description: "This website hosts Moritz-Maria von Igelfeld's research papers, books, course materials, data, curriculum vitae, and contact information."
@@ -44,7 +41,7 @@ params:
     ShowBreadCrumbs: false
     ShowCodeCopyButtons: true
     ShowAllPagesInArchive: false
-    MainSections: ["books","courses","papers","data"]
+    MainSections: ["papers","research","blog"]
     ShowToc: false
     disableScrollToTop: true
     TocOpen: true
@@ -62,42 +59,30 @@ params:
           buttons:
             - name: Papers
               url: papers/
-            - name: Data
-              url: data/
-            - name: Books
-              url: books/
-            - name: Courses
-              url: courses/
+            - name: Research
+              url: research/
+            - name: Blog
+              url: blog/
             - name: Tags
               url: tags/
-            - name: Archive
-              url: archive/
-            - name: Blog
-              url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
 
     socialIcons:
         - name: CV
           url: cv.pdf
         - name: Email
-          url: mailto:igelfeld@regensburg.edu
-        - name: Zoom
-          url: https://www.zoom.us/my/igelfeld
+          url: mailto:minsuk.daniel.kim@gmail.com
         - name: Location
           url: location/
-        - name: Office Hours
-          url: officehours/
         - name: Google Scholar
-          url: https://scholar.google.com/citations?user=cL23w-4AAAAJ
+          url: https://scholar.google.com/citations?user=L61EJqAAAAAJ&hl
         - name: GitHub
-          url: https://github.com/pmichaillat
-        - name: Substack
-          url: https://pmichaillat.substack.com
-        - name: YouTube
-          url: https://www.youtube.com/@pmichaillat
-        - name: Twitter
-          url: https://x.com/pmichaillat
+          url: https://github.com/danielhankim
         - name: Bluesky
-          url: https://bsky.app/profile/pmichaillat.bsky.social
+          url: https://bsky.app/profile/danielhankim.bsky.social
+        - name: LinkedIn
+          url: https://www.linkedin.com/in/danielhankim
+        - name: ORCID
+          url: https://orcid.org/0000-0003-1574-5761
 
     assets:
         disableScrollBarStyle: true
@@ -105,7 +90,7 @@ params:
         hiddenInList: false
         hiddenInSingle: true
     label:
-      text: "Moritz-Maria von Igelfeld"
+      text: "Minsuk Kim (a.k.a. Daniel Han Kim)"
       icon: favicon.ico
       iconHeight: 18
 
