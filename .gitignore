@@ -2,3 +2,9 @@
 public/
 resources/
 .hugo_build.lock
+
+# macOS
+.DS_Store
+
+# old templates
+old/
