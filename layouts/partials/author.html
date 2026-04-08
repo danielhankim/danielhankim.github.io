@@ -2,7 +2,16 @@
 {{- $author := (.Params.author | default site.Params.author) }}
 {{- $author_type := (printf "%T" $author) }}
 {{- if (or (eq $author_type "[]string") (eq $author_type "[]interface {}")) }}
-{{- (delimit $author ",&thinsp;" | safeHTML ) }}
+{{- $n := len $author }}
+{{- if gt $n 3 }}
+{{- (index $author 0) }} et al.
+{{- else if eq $n 2 }}
+{{- (index $author 0) }} and {{ (index $author 1) }}
+{{- else if eq $n 3 }}
+{{- (index $author 0) }}, {{ (index $author 1) }}, and {{ (index $author 2) }}
+{{- else }}
+{{- (delimit $author ", " | safeHTML) }}
+{{- end }}
 {{- else }}
 {{- $author }}
 {{- end }}

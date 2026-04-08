@@ -1,5 +1,27 @@
 {{- define "main" }}
 
+{{/* Build nodes: unique tags from papers */}}
+{{- $nodes := slice -}}
+{{- range $tag, $pages := site.Taxonomies.tags -}}
+  {{- $paperPages := where $pages.Pages "Section" "papers" -}}
+  {{- if gt (len $paperPages) 0 -}}
+    {{- $nodes = $nodes | append (dict "id" $tag "count" (len $paperPages)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* Build raw links: all co-occurring tag pairs (dedup happens in JS) */}}
+{{- $rawLinks := slice -}}
+{{- range (where site.RegularPages "Section" "papers") -}}
+  {{- $tags := .Params.tags -}}
+  {{- range $i, $t1 := $tags -}}
+    {{- range $j, $t2 := $tags -}}
+      {{- if lt $i $j -}}
+        {{- $rawLinks = $rawLinks | append (dict "source" $t1 "target" $t2) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
 <header class="page-header">
 </header>
 
@@ -15,5 +37,101 @@
     {{- end }}
     {{- end }}
 </ul>
+
+<div id="tag-network-container" style="width:100%; height:560px; border-radius:12px; overflow:hidden; margin-top:2rem;"></div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+(function () {
+  const raw = {{ dict "nodes" $nodes "links" $rawLinks | jsonify | safeJS }};
+
+  // Deduplicate links
+  const seen = new Set();
+  const links = raw.links.filter(l => {
+    const key = [l.source, l.target].sort().join('--');
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+
+  const graphData = { nodes: raw.nodes, links };
+
+  const container = document.getElementById('tag-network-container');
+  const width = container.clientWidth || 800;
+  const height = 560;
+
+  const svg = d3.select('#tag-network-container')
+    .append('svg')
+    .attr('width', '100%')
+    .attr('height', height)
+    .style('background', 'var(--entry)')
+    .style('border-radius', '12px');
+
+  const g = svg.append('g');
+
+  svg.call(
+    d3.zoom().scaleExtent([0.3, 3]).on('zoom', (event) => g.attr('transform', event.transform))
+  );
+
+  const radius = d => 8 + d.count * 5;
+
+  const simulation = d3.forceSimulation(graphData.nodes)
+    .force('link', d3.forceLink(graphData.links).id(d => d.id).distance(110))
+    .force('charge', d3.forceManyBody().strength(-250))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide().radius(d => radius(d) + 18));
+
+  const link = g.append('g')
+    .selectAll('line')
+    .data(graphData.links)
+    .join('line')
+    .attr('stroke', 'var(--secondary)')
+    .attr('stroke-opacity', 0.4)
+    .attr('stroke-width', 1.5);
+
+  const nodeGroup = g.append('g')
+    .selectAll('g')
+    .data(graphData.nodes)
+    .join('g')
+    .style('cursor', 'grab')
+    .call(
+      d3.drag()
+        .on('start', (event, d) => {
+          if (!event.active) simulation.alphaTarget(0.3).restart();
+          d.fx = d.x; d.fy = d.y;
+        })
+        .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
+        .on('end', (event, d) => {
+          if (!event.active) simulation.alphaTarget(0);
+          d.fx = null; d.fy = null;
+        })
+    );
+
+  nodeGroup.append('circle')
+    .attr('r', radius)
+    .attr('fill', 'var(--primary)')
+    .attr('fill-opacity', 0.12)
+    .attr('stroke', 'var(--primary)')
+    .attr('stroke-width', 1.5);
+
+  nodeGroup.append('text')
+    .text(d => d.id)
+    .attr('text-anchor', 'middle')
+    .attr('dy', d => radius(d) + 14)
+    .attr('font-size', '11px')
+    .attr('fill', 'var(--primary)')
+    .style('pointer-events', 'none')
+    .style('user-select', 'none');
+
+  simulation.on('tick', () => {
+    link
+      .attr('x1', d => d.source.x)
+      .attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x)
+      .attr('y2', d => d.target.y);
+    nodeGroup.attr('transform', d => `translate(${d.x},${d.y})`);
+  });
+})();
+</script>
 
 {{- end }}
