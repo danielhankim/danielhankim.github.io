@@ -4,6 +4,12 @@ theme: PaperMod
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
 pagination:
   pagerSize: 20
 
