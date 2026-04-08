@@ -32,13 +32,17 @@
     {{- $count := .Count }}
     {{- with site.GetPage (printf "/%s/%s" $type $name) }}
     <li>
-        <a href="{{ .Permalink }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
+        <a href="{{ .Permalink }}">{{ .Name | title }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
     </li>
     {{- end }}
     {{- end }}
 </ul>
 
-<div id="tag-network-container" style="width:100%; height:560px; border-radius:12px; overflow:hidden; margin-top:2rem;"></div>
+<div style="margin-top:2rem; margin-bottom:0.5rem;">
+  <h3 style="margin-bottom:0.25rem;">Tag Network</h3>
+  <p style="font-size:0.85rem; color:var(--secondary); margin:0;">Two tags are connected if they appear together in the same paper. Node size is proportional to the number of papers sharing that tag. Drag to rearrange, scroll to zoom.</p>
+</div>
+<div id="tag-network-container" style="width:100%; height:560px; border-radius:12px; overflow:hidden; margin-top:0.75rem;"></div>
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script>
@@ -114,8 +118,10 @@
     .attr('stroke', 'var(--primary)')
     .attr('stroke-width', 1.5);
 
+  const toTitleCase = s => s.replace(/\b\w/g, c => c.toUpperCase());
+
   nodeGroup.append('text')
-    .text(d => d.id)
+    .text(d => toTitleCase(d.id))
     .attr('text-anchor', 'middle')
     .attr('dy', d => radius(d) + 14)
     .attr('font-size', '11px')
