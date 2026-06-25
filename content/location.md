@@ -8,23 +8,27 @@ description: "Minsuk Daniel Kim's mailing and office addresses at Indiana Univer
 
 ---
 
-#### Mailing address
+#### Contact Infrormation
+Note: I am currently visiting Senseable City Seoul in Korea. Please feel free to reach me out if you are in Seoul!
 
-Minsuk Kim  
-Center for Complex Networks and Systems Research  
-Luddy School of Informatics, Computing, and Engineering  
-Indiana University Bloomington  
+Minsuk Kim
 
----
+Senseable City Lab,  
+Department of Urban Studies and Planning,  
+Massachusetts Institute of Technology,  
+77 Massachusetts Avenue,  
+Cambridge, MA 02139 USA
 
-#### Office address
-
-Luddy Center for Artificial Intelligence  
-1015 East 11th St.  
-Bloomington, IN 47408
+Senseable City Seoul,  
+31, Maebongsan-ro  
+Mapo-gu, Seoul, South Korea  
 
 ---
 
 #### Office location
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3093.042401829639!2d-86.52464262344425!3d39.173756771666426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886c67191563decd%3A0xe86d6e042f73a832!2sLuddy%20Center%20for%20Artificial%20Intelligence!5e0!3m2!1sen!2sus!4v1775585029334!5m2!1sen!2sus" width="700" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+Senseable City Lab, Cambridge, MA  
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d351.8823162863967!2d-71.09412307131363!3d42.359704612924226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3718f737ea239%3A0xd64cc38cf3b56c33!2sMIT%20Building%209!5e0!3m2!1sen!2skr!4v1782375815172!5m2!1sen!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+Senseable City Seoul  
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d824.575703081647!2d126.8902775279047!3d37.575877353815116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9913571fc981%3A0xadfa05faccc7b978!2sS-Plex%20Center%20Building!5e0!3m2!1sen!2skr!4v1782376342615!5m2!1sen!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
