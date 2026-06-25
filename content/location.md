@@ -8,7 +8,7 @@ description: "Minsuk Daniel Kim's mailing and office addresses at Indiana Univer
 
 ---
 
-#### Contact Infrormation
+#### Contact Information
 Note: I am currently visiting Senseable City Seoul in Korea. Please feel free to reach me out if you are in Seoul!
 
 Minsuk Kim
@@ -22,6 +22,9 @@ Cambridge, MA 02139 USA
 Senseable City Seoul,  
 31, Maebongsan-ro  
 Mapo-gu, Seoul, South Korea  
+
+minsuk.daniel.kim@gmail.com  
+dan418@mit.edu
 
 ---
 
