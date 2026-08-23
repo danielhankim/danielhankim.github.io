@@ -46,3 +46,12 @@
 .button:hover {
     background: var(--lightcolor);
 }
+
+.profile_inner a {
+    color: var(--darkcolor);
+    text-decoration: underline;
+}
+
+.profile_inner a:hover {
+    color: var(--primary);
+}
