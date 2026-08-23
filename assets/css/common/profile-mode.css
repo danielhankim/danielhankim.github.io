@@ -47,11 +47,11 @@
     background: var(--lightcolor);
 }
 
-.profile_inner a {
+.profile_inner > span a {
     color: var(--darkcolor);
     text-decoration: underline;
 }
 
-.profile_inner a:hover {
+.profile_inner > span a:hover {
     color: var(--primary);
 }
